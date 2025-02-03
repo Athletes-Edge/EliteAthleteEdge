@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3F2ED729E487508B82FC98E3 /* Pods_EliteAthleteEdgeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98EB40BE0883C4FB9A0C0DB0 /* Pods_EliteAthleteEdgeTests.framework */; };
+		9152B82D9E58DC042F010AC8 /* Pods_EliteAthleteEdge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 413AA2F4AFAE9A40BCD55730 /* Pods_EliteAthleteEdge.framework */; };
+		F7F8BA1194D217BC5E72B631 /* Pods_EliteAthleteEdge_EliteAthleteEdgeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67D542BF5766C2EB20FAFEAD /* Pods_EliteAthleteEdge_EliteAthleteEdgeUITests.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		6894A8BB2D51180A00000C34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,9 +30,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31EB661D498A4A6E0390867E /* Pods-EliteAthleteEdge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EliteAthleteEdge.release.xcconfig"; path = "Target Support Files/Pods-EliteAthleteEdge/Pods-EliteAthleteEdge.release.xcconfig"; sourceTree = "<group>"; };
+		3B88B589992E7F7F22FC2DC5 /* Pods-EliteAthleteEdge-EliteAthleteEdgeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EliteAthleteEdge-EliteAthleteEdgeUITests.release.xcconfig"; path = "Target Support Files/Pods-EliteAthleteEdge-EliteAthleteEdgeUITests/Pods-EliteAthleteEdge-EliteAthleteEdgeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		413AA2F4AFAE9A40BCD55730 /* Pods_EliteAthleteEdge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EliteAthleteEdge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B823CC5D0BFBAAA35A28351 /* Pods-EliteAthleteEdge-EliteAthleteEdgeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EliteAthleteEdge-EliteAthleteEdgeUITests.debug.xcconfig"; path = "Target Support Files/Pods-EliteAthleteEdge-EliteAthleteEdgeUITests/Pods-EliteAthleteEdge-EliteAthleteEdgeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5DDF40C1EC7ACEF84F6B4C5C /* Pods-EliteAthleteEdgeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EliteAthleteEdgeTests.debug.xcconfig"; path = "Target Support Files/Pods-EliteAthleteEdgeTests/Pods-EliteAthleteEdgeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		67D542BF5766C2EB20FAFEAD /* Pods_EliteAthleteEdge_EliteAthleteEdgeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EliteAthleteEdge_EliteAthleteEdgeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6894A8A42D51180900000C34 /* EliteAthleteEdge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EliteAthleteEdge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6894A8BA2D51180A00000C34 /* EliteAthleteEdgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EliteAthleteEdgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6894A8C42D51180A00000C34 /* EliteAthleteEdgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EliteAthleteEdgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		98EB40BE0883C4FB9A0C0DB0 /* Pods_EliteAthleteEdgeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EliteAthleteEdgeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1CB428C4C304D003026660A /* Pods-EliteAthleteEdgeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EliteAthleteEdgeTests.release.xcconfig"; path = "Target Support Files/Pods-EliteAthleteEdgeTests/Pods-EliteAthleteEdgeTests.release.xcconfig"; sourceTree = "<group>"; };
+		DF082F74E4C1B2E4FD330D24 /* Pods-EliteAthleteEdge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EliteAthleteEdge.debug.xcconfig"; path = "Target Support Files/Pods-EliteAthleteEdge/Pods-EliteAthleteEdge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -65,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9152B82D9E58DC042F010AC8 /* Pods_EliteAthleteEdge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F2ED729E487508B82FC98E3 /* Pods_EliteAthleteEdgeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,12 +96,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7F8BA1194D217BC5E72B631 /* Pods_EliteAthleteEdge_EliteAthleteEdgeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41A31484AF10D7EF5F7A352D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF082F74E4C1B2E4FD330D24 /* Pods-EliteAthleteEdge.debug.xcconfig */,
+				31EB661D498A4A6E0390867E /* Pods-EliteAthleteEdge.release.xcconfig */,
+				5B823CC5D0BFBAAA35A28351 /* Pods-EliteAthleteEdge-EliteAthleteEdgeUITests.debug.xcconfig */,
+				3B88B589992E7F7F22FC2DC5 /* Pods-EliteAthleteEdge-EliteAthleteEdgeUITests.release.xcconfig */,
+				5DDF40C1EC7ACEF84F6B4C5C /* Pods-EliteAthleteEdgeTests.debug.xcconfig */,
+				D1CB428C4C304D003026660A /* Pods-EliteAthleteEdgeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6894A89B2D51180900000C34 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +123,8 @@
 				6894A8BD2D51180A00000C34 /* EliteAthleteEdgeTests */,
 				6894A8C72D51180A00000C34 /* EliteAthleteEdgeUITests */,
 				6894A8A52D51180900000C34 /* Products */,
+				41A31484AF10D7EF5F7A352D /* Pods */,
+				BA41C909CD66FED2CA3DCEF6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +138,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		BA41C909CD66FED2CA3DCEF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				413AA2F4AFAE9A40BCD55730 /* Pods_EliteAthleteEdge.framework */,
+				67D542BF5766C2EB20FAFEAD /* Pods_EliteAthleteEdge_EliteAthleteEdgeUITests.framework */,
+				98EB40BE0883C4FB9A0C0DB0 /* Pods_EliteAthleteEdgeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6894A8CD2D51180A00000C34 /* Build configuration list for PBXNativeTarget "EliteAthleteEdge" */;
 			buildPhases = (
+				3DA158038C494399E963C249 /* [CP] Check Pods Manifest.lock */,
 				6894A8A02D51180900000C34 /* Sources */,
 				6894A8A12D51180900000C34 /* Frameworks */,
 				6894A8A22D51180900000C34 /* Resources */,
+				FE23EEBDD8032C60B824A810 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,8 +169,6 @@
 				6894A8A62D51180900000C34 /* EliteAthleteEdge */,
 			);
 			name = EliteAthleteEdge;
-			packageProductDependencies = (
-			);
 			productName = EliteAthleteEdge;
 			productReference = 6894A8A42D51180900000C34 /* EliteAthleteEdge.app */;
 			productType = "com.apple.product-type.application";
@@ -134,6 +177,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6894A8D22D51180A00000C34 /* Build configuration list for PBXNativeTarget "EliteAthleteEdgeTests" */;
 			buildPhases = (
+				A18F0D6FD6931CA4A4283AA5 /* [CP] Check Pods Manifest.lock */,
 				6894A8B62D51180A00000C34 /* Sources */,
 				6894A8B72D51180A00000C34 /* Frameworks */,
 				6894A8B82D51180A00000C34 /* Resources */,
@@ -147,8 +191,6 @@
 				6894A8BD2D51180A00000C34 /* EliteAthleteEdgeTests */,
 			);
 			name = EliteAthleteEdgeTests;
-			packageProductDependencies = (
-			);
 			productName = EliteAthleteEdgeTests;
 			productReference = 6894A8BA2D51180A00000C34 /* EliteAthleteEdgeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -157,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6894A8D52D51180A00000C34 /* Build configuration list for PBXNativeTarget "EliteAthleteEdgeUITests" */;
 			buildPhases = (
+				C2651C7ED3FBA0C9DC4E78BB /* [CP] Check Pods Manifest.lock */,
 				6894A8C02D51180A00000C34 /* Sources */,
 				6894A8C12D51180A00000C34 /* Frameworks */,
 				6894A8C22D51180A00000C34 /* Resources */,
+				86041A6EC129E734479224B3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,8 +214,6 @@
 				6894A8C72D51180A00000C34 /* EliteAthleteEdgeUITests */,
 			);
 			name = EliteAthleteEdgeUITests;
-			packageProductDependencies = (
-			);
 			productName = EliteAthleteEdgeUITests;
 			productReference = 6894A8C42D51180A00000C34 /* EliteAthleteEdgeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -244,6 +286,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3DA158038C494399E963C249 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EliteAthleteEdge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86041A6EC129E734479224B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EliteAthleteEdge-EliteAthleteEdgeUITests/Pods-EliteAthleteEdge-EliteAthleteEdgeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EliteAthleteEdge-EliteAthleteEdgeUITests/Pods-EliteAthleteEdge-EliteAthleteEdgeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EliteAthleteEdge-EliteAthleteEdgeUITests/Pods-EliteAthleteEdge-EliteAthleteEdgeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A18F0D6FD6931CA4A4283AA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EliteAthleteEdgeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2651C7ED3FBA0C9DC4E78BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EliteAthleteEdge-EliteAthleteEdgeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE23EEBDD8032C60B824A810 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EliteAthleteEdge/Pods-EliteAthleteEdge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EliteAthleteEdge/Pods-EliteAthleteEdge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EliteAthleteEdge/Pods-EliteAthleteEdge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6894A8A02D51180900000C34 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -284,25 +429,34 @@
 /* Begin XCBuildConfiguration section */
 		6894A8CE2D51180A00000C34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF082F74E4C1B2E4FD330D24 /* Pods-EliteAthleteEdge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EliteAthleteEdge/EliteAthleteEdge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 638JFH4RR5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EliteAthleteEdge/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Athletes Edge needs access to your camera to take a profile picture. We will never use your camera for any other purpose.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to provide better services even when the app is in the background.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide better services while the app is in use.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Athletes Edge requires access to your microphone to record audio during video capture. This helps enhance your fitness tracking and recording experience.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Athletes Edge needs access to your photos to allow you to upload and manage your prescriptions easily.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Athletes Edge needs access to your photos to allow you to upload and manage your prescriptions easily.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.buzzware.EliteAthleteEdge;
+				PRODUCT_BUNDLE_IDENTIFIER = comm.buzzware.athletes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -312,25 +466,34 @@
 		};
 		6894A8CF2D51180A00000C34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31EB661D498A4A6E0390867E /* Pods-EliteAthleteEdge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EliteAthleteEdge/EliteAthleteEdge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 638JFH4RR5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EliteAthleteEdge/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Athletes Edge needs access to your camera to take a profile picture. We will never use your camera for any other purpose.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to provide better services even when the app is in the background.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide better services while the app is in use.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Athletes Edge requires access to your microphone to record audio during video capture. This helps enhance your fitness tracking and recording experience.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Athletes Edge needs access to your photos to allow you to upload and manage your prescriptions easily.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Athletes Edge needs access to your photos to allow you to upload and manage your prescriptions easily.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.buzzware.EliteAthleteEdge;
+				PRODUCT_BUNDLE_IDENTIFIER = comm.buzzware.athletes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -459,6 +622,7 @@
 		};
 		6894A8D32D51180A00000C34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DDF40C1EC7ACEF84F6B4C5C /* Pods-EliteAthleteEdgeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -478,6 +642,7 @@
 		};
 		6894A8D42D51180A00000C34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1CB428C4C304D003026660A /* Pods-EliteAthleteEdgeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -497,6 +662,7 @@
 		};
 		6894A8D62D51180A00000C34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B823CC5D0BFBAAA35A28351 /* Pods-EliteAthleteEdge-EliteAthleteEdgeUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -514,6 +680,7 @@
 		};
 		6894A8D72D51180A00000C34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B88B589992E7F7F22FC2DC5 /* Pods-EliteAthleteEdge-EliteAthleteEdgeUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Rubik-Medium.ttf">
+            <string>Rubik-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="eX1-Or-Rs5" customClass="profieHeader" customModule="athletes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="93"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJq-1g-GjV">
+                    <rect key="frame" x="24" y="0.0" width="269" height="59"/>
+                    <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="15"/>
+                    <color key="textColor" name="blackColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="laf-F4-czq"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="nJq-1g-GjV" firstAttribute="top" secondItem="eX1-Or-Rs5" secondAttribute="top" id="765-Yp-YKf"/>
+                <constraint firstItem="nJq-1g-GjV" firstAttribute="leading" secondItem="laf-F4-czq" secondAttribute="leading" constant="24" id="XSg-Aa-VQm"/>
+                <constraint firstItem="laf-F4-czq" firstAttribute="bottom" secondItem="nJq-1g-GjV" secondAttribute="bottom" id="bER-xD-uC6"/>
+                <constraint firstItem="laf-F4-czq" firstAttribute="trailing" secondItem="nJq-1g-GjV" secondAttribute="trailing" constant="100" id="r5Y-wo-Vew"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="lblname" destination="nJq-1g-GjV" id="Huk-kt-4PR"/>
+            </connections>
+            <point key="canvasLocation" x="20.610687022900763" y="-292.6056338028169"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="blackColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
