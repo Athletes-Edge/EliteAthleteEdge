@@ -43,7 +43,7 @@
         <!--Profile View Controller-->
         <scene sceneID="8T8-ts-uLb">
             <objects>
-                <viewController id="L9Z-2j-IiH" customClass="ProfileViewController" customModule="Athlete" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="L9Z-2j-IiH" customClass="ProfileViewController" customModule="EliteAthleteEdge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vuh-ge-dtw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,7 +194,7 @@
                                 <rect key="frame" x="0.0" y="134" width="393" height="608"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfiletopTableViewCell" id="5lD-oZ-Skk" customClass="ProfiletopTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfiletopTableViewCell" id="5lD-oZ-Skk" customClass="ProfiletopTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="398.33334350585938"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5lD-oZ-Skk" id="3lj-eP-dcg">
@@ -392,33 +392,39 @@
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7c-99-ecy">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RB-x2-Rrz">
+                                                                    <rect key="frame" x="209.33333333333334" y="20.333333333333371" width="39.666666666666657" height="14.333333333333336"/>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="12"/>
+                                                                    <color key="textColor" systemColor="systemRedColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inactive" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zm-Gp-yIT">
                                                                     <rect key="frame" x="257" y="12.666666666666686" width="60" height="30"/>
                                                                     <color key="backgroundColor" name="blue33"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="30" id="DiR-Kb-U3t"/>
-                                                                        <constraint firstAttribute="width" secondItem="o7c-99-ecy" secondAttribute="height" multiplier="2:1" id="T3W-ER-txc"/>
+                                                                        <constraint firstAttribute="height" constant="30" id="0AI-tY-uxv"/>
+                                                                        <constraint firstAttribute="width" secondItem="6Zm-Gp-yIT" secondAttribute="height" multiplier="2:1" id="fqy-uV-80s"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Rubik-SemiBold" family="Rubik" pointSize="12"/>
-                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                    <state key="normal" title="Inactive">
-                                                                        <color key="titleColor" name="blueColor"/>
-                                                                    </state>
+                                                                    <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="12"/>
+                                                                    <color key="textColor" name="blueColor"/>
+                                                                    <nil key="highlightedColor"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                             <real key="value" value="12"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
-                                                                </button>
+                                                                </label>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
+                                                                <constraint firstItem="6Zm-Gp-yIT" firstAttribute="centerY" secondItem="9RB-x2-Rrz" secondAttribute="centerY" id="27f-L0-7JQ"/>
                                                                 <constraint firstItem="qKJ-gZ-1P3" firstAttribute="leading" secondItem="PHM-uf-5e0" secondAttribute="leading" constant="16" id="2Zr-Ya-78E"/>
                                                                 <constraint firstItem="qKJ-gZ-1P3" firstAttribute="centerY" secondItem="PHM-uf-5e0" secondAttribute="centerY" id="5Ok-9O-Ca6"/>
-                                                                <constraint firstAttribute="trailing" secondItem="o7c-99-ecy" secondAttribute="trailing" constant="12" id="AlX-T4-0zy"/>
                                                                 <constraint firstAttribute="height" constant="55" id="QVN-AL-iqF"/>
                                                                 <constraint firstItem="7YP-m0-KaF" firstAttribute="centerY" secondItem="qKJ-gZ-1P3" secondAttribute="centerY" id="S0f-Ga-ErK"/>
-                                                                <constraint firstItem="o7c-99-ecy" firstAttribute="centerY" secondItem="7YP-m0-KaF" secondAttribute="centerY" id="XBb-Uj-9bY"/>
+                                                                <constraint firstItem="9RB-x2-Rrz" firstAttribute="centerY" secondItem="7YP-m0-KaF" secondAttribute="centerY" id="TcK-Pi-GvW"/>
+                                                                <constraint firstAttribute="trailing" secondItem="6Zm-Gp-yIT" secondAttribute="trailing" constant="12" id="U7J-xm-rgc"/>
+                                                                <constraint firstItem="6Zm-Gp-yIT" firstAttribute="leading" secondItem="9RB-x2-Rrz" secondAttribute="trailing" constant="8" id="jhL-aC-4Uv"/>
                                                                 <constraint firstItem="7YP-m0-KaF" firstAttribute="leading" secondItem="qKJ-gZ-1P3" secondAttribute="trailing" constant="12" id="r7l-Jt-BOL"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
@@ -469,15 +475,17 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="btnedit" destination="SOz-oX-Hvb" id="dxc-wu-e7r"/>
+                                            <outlet property="cancelLabel" destination="9RB-x2-Rrz" id="SQK-P5-7eT"/>
                                             <outlet property="completeLabel" destination="0UZ-Ha-JTC" id="VSN-OI-Gk8"/>
                                             <outlet property="profileImage" destination="TvT-0S-JK2" id="sLq-NB-tc0"/>
                                             <outlet property="progressLabel" destination="giv-oj-PWl" id="ybC-Hp-4Aj"/>
-                                            <outlet property="upgradeBtn" destination="o7c-99-ecy" id="5fG-tH-2G8"/>
+                                            <outlet property="upgradeBtn" destination="6Zm-Gp-yIT" id="ffm-9U-ZYR"/>
+                                            <outlet property="upgradeLabel" destination="7YP-m0-KaF" id="28M-4Z-FPH"/>
                                             <outlet property="upgradeView" destination="PHM-uf-5e0" id="qYn-Fu-ahm"/>
                                             <outlet property="userNameLabel" destination="nwT-2w-gy5" id="k00-Pf-3ap"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfilestatsTableViewCell" id="0qg-hk-LkF" customClass="ProfilestatsTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfilestatsTableViewCell" id="0qg-hk-LkF" customClass="ProfilestatsTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="448.33334350585938" width="393" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0qg-hk-LkF" id="el0-ER-Eqx">
@@ -564,7 +572,7 @@
                                             <outlet property="lblname" destination="fjD-1b-ZTq" id="PyZ-Su-zOn"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileTeamTableViewCell" id="gUd-dp-JfP" customClass="ProfileTeamTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileTeamTableViewCell" id="gUd-dp-JfP" customClass="ProfileTeamTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="515.33334350585938" width="393" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gUd-dp-JfP" id="bF5-rt-Lie">
@@ -641,7 +649,7 @@
                                             <outlet property="lblname" destination="EkR-pW-4nX" id="owk-fR-3gj"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="buttonTableViewCell" id="ydo-6a-sCt" customClass="buttonTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="buttonTableViewCell" id="ydo-6a-sCt" customClass="buttonTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="582.33334350585938" width="393" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ydo-6a-sCt" id="XAN-ca-TMK">
@@ -727,7 +735,7 @@
         <!--Statistic View Controller-->
         <scene sceneID="tqp-CZ-Hm3">
             <objects>
-                <viewController storyboardIdentifier="StatisticViewController" id="OvJ-G6-4NK" customClass="StatisticViewController" customModule="Athlete" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StatisticViewController" id="OvJ-G6-4NK" customClass="StatisticViewController" customModule="EliteAthleteEdge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DI2-es-3j4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -796,7 +804,7 @@
                                 <rect key="frame" x="0.0" y="134" width="393" height="684"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StatisticLineTableViewCell" id="XIn-mO-vc1" customClass="StatisticLineTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StatisticLineTableViewCell" id="XIn-mO-vc1" customClass="StatisticLineTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="294"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XIn-mO-vc1" id="Fu7-1a-78u">
@@ -830,7 +838,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StatisticCEllTableViewCell" id="et2-xg-EE8" customClass="StatisticCEllTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StatisticCEllTableViewCell" id="et2-xg-EE8" customClass="StatisticCEllTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="344" width="393" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="et2-xg-EE8" id="oIM-h1-sqA">
@@ -956,7 +964,7 @@
         <!--Edit Profile View Controller-->
         <scene sceneID="xRz-yo-KI1">
             <objects>
-                <viewController storyboardIdentifier="EditProfileViewController" id="862-dm-AjE" customClass="EditProfileViewController" customModule="Athlete" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfileViewController" id="862-dm-AjE" customClass="EditProfileViewController" customModule="EliteAthleteEdge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jfc-Ir-taR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1040,7 +1048,7 @@
                                 <rect key="frame" x="0.0" y="134" width="393" height="684"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EditProfileTopTableViewCell" id="swI-76-lv5" customClass="EditProfileTopTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EditProfileTopTableViewCell" id="swI-76-lv5" customClass="EditProfileTopTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="311"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="swI-76-lv5" id="nHO-qc-JL3">
@@ -1065,7 +1073,7 @@
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter you email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ba0-iU-veg" customClass="UITexfield_Additions" customModule="Athlete" customModuleProvider="target">
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter you email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ba0-iU-veg" customClass="UITexfield_Additions" customModule="EliteAthleteEdge" customModuleProvider="target">
                                                             <rect key="frame" x="8" y="33" width="329" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="kOg-Kt-ujm"/>
@@ -1097,7 +1105,7 @@
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter you name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sbh-Is-flR" customClass="UITexfield_Additions" customModule="Athlete" customModuleProvider="target">
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter you name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sbh-Is-flR" customClass="UITexfield_Additions" customModule="EliteAthleteEdge" customModuleProvider="target">
                                                             <rect key="frame" x="8" y="134" width="329" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="9Xz-nR-dqa"/>
@@ -1122,7 +1130,7 @@
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ar6-65-hkn" customClass="UITexfield_Additions" customModule="Athlete" customModuleProvider="target">
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ar6-65-hkn" customClass="UITexfield_Additions" customModule="EliteAthleteEdge" customModuleProvider="target">
                                                             <rect key="frame" x="8" y="235" width="132" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="EMy-Rt-3Ow"/>
@@ -1187,7 +1195,7 @@
                                             <outlet property="passwordTextField" destination="Ar6-65-hkn" id="0qH-W6-i2H"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EditProfileTeamTableViewCell" id="E5b-YP-oo8" customClass="EditProfileTeamTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EditProfileTeamTableViewCell" id="E5b-YP-oo8" customClass="EditProfileTeamTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="361" width="393" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E5b-YP-oo8" id="Bai-0l-GbX">
@@ -1306,7 +1314,7 @@
         <!--Alert Delete View Controller-->
         <scene sceneID="hFO-jd-Xb4">
             <objects>
-                <viewController storyboardIdentifier="AlertDeleteViewController" id="kjf-rW-MpB" customClass="AlertDeleteViewController" customModule="Athlete" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlertDeleteViewController" id="kjf-rW-MpB" customClass="AlertDeleteViewController" customModule="EliteAthleteEdge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XKf-Wn-NmX">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1414,7 +1422,7 @@
         <!--My Review View Controller-->
         <scene sceneID="3Nj-ft-pxV">
             <objects>
-                <viewController storyboardIdentifier="MyReviewViewController" id="Crc-lP-8aF" customClass="MyReviewViewController" customModule="Athlete" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyReviewViewController" id="Crc-lP-8aF" customClass="MyReviewViewController" customModule="EliteAthleteEdge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cAP-ME-avr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1483,7 +1491,7 @@
                                 <rect key="frame" x="0.0" y="134" width="393" height="684"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyReviewTableViewCell" id="KvZ-FW-HfS" customClass="MyReviewTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyReviewTableViewCell" id="KvZ-FW-HfS" customClass="MyReviewTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KvZ-FW-HfS" id="LGW-bD-1mb">
@@ -1643,6 +1651,9 @@
         </systemColor>
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

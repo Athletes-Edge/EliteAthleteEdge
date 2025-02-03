@@ -15,8 +15,9 @@ class ProfiletopTableViewCell: UITableViewCell {
     @IBOutlet weak var btnedit: UIButton!
     @IBOutlet weak var completeLabel: UILabel!
     @IBOutlet weak var progressLabel: UILabel!
-    
-    @IBOutlet weak var upgradeBtn: UIButton!
+    @IBOutlet weak var upgradeLabel: UILabel!
+    @IBOutlet weak var cancelLabel: UILabel!
+    @IBOutlet weak var upgradeBtn: UILabel!
     @IBOutlet weak var upgradeView: UIView!
     
     override func awakeFromNib() {

@@ -29,7 +29,7 @@
         <!--Courses View Controller-->
         <scene sceneID="lOu-f5-ASz">
             <objects>
-                <viewController id="plE-4f-fuH" customClass="CoursesViewController" customModule="Athlete" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="plE-4f-fuH" customClass="CoursesViewController" customModule="EliteAthleteEdge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l9r-PP-ZFD">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +80,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="647"/>
                                 <color key="backgroundColor" name="bgColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoursesTableViewCell" id="eD8-Iq-Ve1" customClass="CoursesTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoursesTableViewCell" id="eD8-Iq-Ve1" customClass="CoursesTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="190"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eD8-Iq-Ve1" id="42L-E0-W1x">
@@ -384,7 +384,7 @@
         <!--Subscription View Controller-->
         <scene sceneID="Orv-3q-XF0">
             <objects>
-                <viewController storyboardIdentifier="SubscriptionViewController" id="xJP-Hk-KKO" customClass="SubscriptionViewController" customModule="Athlete" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubscriptionViewController" id="xJP-Hk-KKO" customClass="SubscriptionViewController" customModule="EliteAthleteEdge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fCI-Gt-ZeJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -851,7 +851,7 @@
         <!--Select Card Payment View Controller-->
         <scene sceneID="Bhr-Bw-6JV">
             <objects>
-                <viewController storyboardIdentifier="SelectCardPaymentViewController" id="ppr-0g-Vne" customClass="SelectCardPaymentViewController" customModule="Athlete" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectCardPaymentViewController" id="ppr-0g-Vne" customClass="SelectCardPaymentViewController" customModule="EliteAthleteEdge" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f9K-UB-cMf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -906,7 +906,7 @@
                                             <constraint firstAttribute="height" constant="150" id="jhM-4v-rBF"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="b5N-iY-Fh8" customClass="CardListTableViewCell" customModule="Athlete">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="b5N-iY-Fh8" customClass="CardListTableViewCell" customModule="EliteAthleteEdge">
                                                 <rect key="frame" x="0.0" y="50" width="313" height="66.333335876464844"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b5N-iY-Fh8" id="aj0-yZ-uv8">
@@ -1034,7 +1034,7 @@
         <!--Add Card View Controller-->
         <scene sceneID="bhI-RP-qDH">
             <objects>
-                <viewController storyboardIdentifier="AddCardViewController" id="BAV-ge-0zv" customClass="AddCardViewController" customModule="Athlete" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCardViewController" id="BAV-ge-0zv" customClass="AddCardViewController" customModule="EliteAthleteEdge" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ccH-XG-RDG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1178,7 +1178,7 @@
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="POST CODE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yz9-Qf-xCT" customClass="UITexfield_Additions" customModule="Athlete" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="POST CODE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yz9-Qf-xCT" customClass="UITexfield_Additions" customModule="EliteAthleteEdge" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="249.00000000000006" width="301" height="43"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1362,7 +1362,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -104,6 +104,9 @@ class SubscriptionViewController: UIViewController {
                     switch self.delegate{
                     case let controller as HomeViewController:
                         PopupHelper.showAlertControllerWithSuccessBackHome(forErrorMessage: "Your subscription is created successfully", forViewController: self.delegate)
+                    case let controller as ProfileViewController:
+                        PopupHelper.showAlertControllerWithSuccessBackHome(forErrorMessage: "Your subscription is created successfully", forViewController: self.delegate)
+                        controller.getUserData()
                     default:
                         PopupHelper.showAlertControllerWithSuccessBackRoot(forErrorMessage: "Your subscription is created successfully", forViewController: self.delegate)
                     }

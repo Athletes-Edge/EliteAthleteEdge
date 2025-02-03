@@ -59,7 +59,7 @@ class ProfileViewController: UIViewController {
         self.getUserData()
     }
     
-    private func getUserData() {
+    func getUserData() {
         PopupHelper.showAnimating(self)
         FirebaseData.getUserData(uid: FirebaseData.getCurrentUserId()) { error, userData in
             if let error = error{
@@ -150,11 +150,27 @@ class ProfileViewController: UIViewController {
         present(picker ?? YPImagePicker(), animated: true, completion: nil)
     }
     @objc func didtapUpgrade(){
-        let vc = UIStoryboard.storyBoard(withName: .Courses).loadViewController(withIdentifier: .SubscriptionViewController) as! SubscriptionViewController
-        vc.delegate = self
-        vc.modalPresentationStyle = .overCurrentContext
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
+        if self.userData.isSubsCribed{
+            let alert = UIAlertController(title: "Cancel Subscription ", message: "Are you sure want to cancel subscription?", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "Cancel", style: .default)
+            let ok = UIAlertAction(title: "Yes", style: .default) { actt in
+                let data = self.userData.pm_id
+                var datadic = [String:Any]()
+                datadic[Constant.subscriptionIds] = [data]
+                self.callWebService(data: datadic,action: .cancel_subscriptions, .post)
+            }
+            alert.addAction(cancel)
+            alert.addAction(ok)
+            self.present(alert, animated: true)
+        }
+        else{
+            let vc = UIStoryboard.storyBoard(withName: .Courses).loadViewController(withIdentifier: .SubscriptionViewController) as! SubscriptionViewController
+            vc.delegate = self
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true)
+            
+        }
     }
     private func saveProfileImage(image: UIImage) {
         PopupHelper.showAnimating(self)
@@ -162,7 +178,7 @@ class ProfileViewController: UIViewController {
             if let url = url {
                 self.userData.userImage = url
                 self.updateUserData(userModel: self.userData)
-                } else {
+            } else {
                 self.stopAnimating()
                 PopupHelper.alertWithOk(title: "Error", message: error?.localizedDescription ?? "", controler: self)
             }
@@ -196,16 +212,16 @@ class ProfileViewController: UIViewController {
         DispatchQueue.main.async {
             let vc = UIStoryboard.storyBoard(withName: .main).loadViewController(withIdentifier: .NavLoginViewController)
             UIApplication.shared.setRootViewController(vc)
-
+            
         }
     }
     
     @IBAction func logout(_ sender:Any){
-                PopupHelper.alertWithYesNo(title: "Logout Confirmation", message: "Are you sure you want to log out?", controller: self) {  isOkay in
-                    if isOkay {
-                        self.logoutUser()
-                    }
-                }
+        PopupHelper.alertWithYesNo(title: "Logout Confirmation", message: "Are you sure you want to log out?", controller: self) {  isOkay in
+            if isOkay {
+                self.logoutUser()
+            }
+        }
     }
     func deleteTeam(_ indx:Int){
         PopupHelper.showAnimating(self)
@@ -219,7 +235,52 @@ class ProfileViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
-
+    func deleteData(){
+        let user = UserModel()
+        user.pm_id = ""
+        user.isSubsCribed = false
+        PopupHelper.showAnimating(self)
+        FirebaseData.updateUserData(FirebaseData.getCurrentUserId(), dic: user) { error in
+            self.stopAnimating()
+            self.getUserData()
+        }
+    }
+    func callWebService(_ id:String? = nil,data: [String:Any]? = nil, action:webserviceUrl,_ httpMethod:httpMethod,_ index:Int? = nil){
+        
+        WebServicesHelper.callWebService(Parameters: data,suburl: id, action: action, httpMethodName: httpMethod,index) { (indx,action,isNetwork, error, dataDict) in
+            self.stopAnimating()
+            if isNetwork{
+                if let err = error{
+                    PopupHelper.showAlertControllerWithError(forErrorMessage: err, forViewController: self)
+                }
+                else{
+                    if let dic = dataDict as? Dictionary<String,Any>{
+                        switch action {
+                        case .cancel_subscriptions:
+                            if let cards = dic["results"] as? [[String:Any]]{
+                                
+                                self.deleteData()
+                            }
+                            else if let msg = dic[Constant.message] as? String{
+                                PopupHelper.showAlertControllerWithError(forErrorMessage: msg, forViewController: self)
+                            }
+                        
+                        default:
+                            break
+                        }
+                        
+                    }
+                    else{
+                        PopupHelper.showAlertControllerWithError(forErrorMessage: "something went wrong", forViewController: self)
+                    }
+                }
+            }
+            else{
+                PopupHelper.alertWithNetwork(title: "Network Connection", message: "Please connect your internet connection", controler: self)
+                
+            }
+        }
+    }
 }
 
 extension ProfileViewController:UITableViewDelegate,UITableViewDataSource{
@@ -311,17 +372,21 @@ extension ProfileViewController:UITableViewDelegate,UITableViewDataSource{
             cell.progressLabel.text = "\(self.progressArray.count)"
             
             if self.userData.isSubsCribed{
-                cell.upgradeBtn.setTitle("Active", for: .normal)
-                if let gests = cell.upgradeView.gestureRecognizers{
-                    for gest in gests{
-                        cell.upgradeView.removeGestureRecognizer(gest)
-                    }
-                }
+                cell.upgradeBtn.text = "Active"
+                cell.cancelLabel.isHidden = false
+                cell.upgradeLabel.text = "Upgraded"
+//                if let gests = cell.upgradeView.gestureRecognizers{
+//                    for gest in gests{
+//                        cell.upgradeView.removeGestureRecognizer(gest)
+//                    }
+//                }
             }
             else{
-                cell.upgradeView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didtapUpgrade)))
-                cell.upgradeBtn.setTitle("Inactive", for: .normal)
+                cell.upgradeLabel.text = "Upgrade Now"
+                cell.cancelLabel.isHidden = true
+                cell.upgradeBtn.text = "Inactive"
             }
+            cell.upgradeView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didtapUpgrade)))
             return cell
         }
     }

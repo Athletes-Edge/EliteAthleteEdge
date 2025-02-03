@@ -40,14 +40,15 @@ enum webserviceUrl: String {
          detatch = "/widgets/detatch",
          createsubscription = "/widgets/createsubscription",
          updatepaymentmethod = "/widgets/updatepaymentmethod",
-         sendEmail = "/widgets/sendEmail"
+         sendEmail = "/widgets/sendEmail",
+    cancel_subscriptions = "/widgets/cancel-subscriptions"
 
     func url() -> String {
         switch self {
             
         case .directions:
             return Constant.mainGoogleUrl + self.rawValue
-        case .accoutpaymentnew,.firststep,.checkcustidexistornot,.paymentMethods,.detatch,.updatepaymentmethod,.createsubscription,.sendEmail:
+        case .accoutpaymentnew,.firststep,.checkcustidexistornot,.paymentMethods,.detatch,.updatepaymentmethod,.createsubscription,.sendEmail,.cancel_subscriptions:
             return Constant.mainCloudFunctionUrl + self.rawValue
         default:
             return Constant.mainUrl + self.rawValue
@@ -101,7 +102,7 @@ class WebServicesHelper
         case .directions:
         myheaders = ["Content-Type":"application/x-www-form-urlencoded","Accept":"application/json"]
             encoding = URLEncoding.default
-        case .accoutpaymentnew,.firststep,.checkcustidexistornot,.paymentMethods,.detatch,.updatepaymentmethod,.createsubscription,.sendEmail:
+        case .accoutpaymentnew,.firststep,.checkcustidexistornot,.paymentMethods,.detatch,.updatepaymentmethod,.createsubscription,.sendEmail,.cancel_subscriptions:
         myheaders = ["Content-Type":"application/json"]
             encoding = JSONEncoding.default
         default:

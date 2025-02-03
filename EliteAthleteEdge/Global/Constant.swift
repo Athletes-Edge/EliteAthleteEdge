@@ -25,7 +25,7 @@ struct Constant {
     static let jwt_secret = "cQfTjWnZr4u7x!A%D*G-JaNdRgUkXp2s5v8y/B?E(H+MbPeShVmYq3t6w9z$C&F)"
     static let googleWeApiKey = "AIzaSyCJNLALh3oEwF-O9ThRsBy0IUyTxPSxzs0"
     //Login ApiEndpoint
-    static let driverAppUrl = "itms-apps://apple.com/app/id1512372278"
+    static let subscriptionIds = "subscriptionIds"
     static let userAppUrl = "https://apps.apple.com/us/app/iride-user-app/id1512373184"
     static let login_key = "login_key"
     static let location_key = "location_key"
