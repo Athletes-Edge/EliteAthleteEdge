@@ -36,11 +36,14 @@ class SubscriptionViewController: UIViewController {
         vc.modalTransitionStyle = .crossDissolve
         if self.isMonth{
             vc.ammount = 6.99
+            vc.type = "month"
         }
         else{
             vc.ammount = 65.00
+            vc.type = "year"
         }
         vc.delegate = self
+        vc.isSubcribe = true
         self.present(vc, animated: true)
        
     }
@@ -51,11 +54,14 @@ class SubscriptionViewController: UIViewController {
         vc.cardArray = list
         if self.isMonth{
             vc.ammount = 6.99
+            vc.type = "month"
         }
         else{
             vc.ammount = 65.00
+            vc.type = "year"
         }
         vc.delegate = self
+        vc.isSubcribe = true
         self.present(vc, animated: true)
     }
     @IBAction func termTapped(_ sender:Any){

@@ -14,7 +14,7 @@ class UIButton_Additions: NSObject {
 extension UILabel{
     @IBInspectable var fontName: String {
             get {
-                return self.font?.fontName ?? Constant.Montserrat_Regular
+                return self.font?.fontName ?? Constant.Rubik_Regular
             }
             set {
                 if let currentFontSize = self.font?.pointSize, let newFont = UIFont(name: newValue, size: currentFontSize) {
@@ -28,7 +28,7 @@ extension UILabel{
 extension UIButton {
     @IBInspectable var fontName: String {
             get {
-                return self.titleLabel?.font.fontName ?? Constant.Montserrat_Regular
+                return self.titleLabel?.font.fontName ?? Constant.Rubik_Regular
             }
             set {
                 if let currentFontSize = self.titleLabel?.font.pointSize, let newFont = UIFont(name: newValue, size: currentFontSize) {

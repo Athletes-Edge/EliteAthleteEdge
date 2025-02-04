@@ -74,7 +74,7 @@ extension UITextField{
     }
     @IBInspectable var fontName: String {
             get {
-                return self.font?.fontName ?? Constant.Montserrat_Regular
+                return self.font?.fontName ?? Constant.Rubik_Regular
             }
             set {
                 if let currentFontSize = self.font?.pointSize, let newFont = UIFont(name: newValue, size: currentFontSize) {
