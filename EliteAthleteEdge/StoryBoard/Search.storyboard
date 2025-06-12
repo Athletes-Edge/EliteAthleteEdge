@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qxl-uw-PtF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qxl-uw-PtF">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -25,13 +25,13 @@
         <!--Search View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="SearchViewController" id="Y6W-OH-hqX" customClass="SearchViewController" customModule="Athlete" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="Y6W-OH-hqX" customClass="SearchViewController" customModule="EliteAthleteEdge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJF-pD-WGr">
-                                <rect key="frame" x="0.0" y="750" width="393" height="102"/>
+                                <rect key="frame" x="0.0" y="716" width="393" height="136"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dfi-cr-scM">
                                         <rect key="frame" x="0.0" y="8" width="393" height="60"/>
@@ -113,15 +113,15 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JhH-QZ-WJ0">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="125"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="184"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTL-cF-iYy">
-                                        <rect key="frame" x="0.0" y="59" width="393" height="66"/>
+                                        <rect key="frame" x="0.0" y="118" width="393" height="66"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0cM-TO-wG7">
                                                 <rect key="frame" x="24" y="8" width="345" height="50"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Wg-vO-5pM" customClass="UITexfield_Additions" customModule="Athlete" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Wg-vO-5pM" customClass="UITexfield_Additions" customModule="EliteAthleteEdge" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="4" width="279" height="42"/>
                                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -190,10 +190,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gLF-0l-lkk">
-                                <rect key="frame" x="0.0" y="133" width="393" height="609"/>
+                                <rect key="frame" x="0.0" y="192" width="393" height="516"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopCollectionTableViewCell" id="5mu-m8-8Oa" customClass="TopCollectionTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopCollectionTableViewCell" id="5mu-m8-8Oa" customClass="TopCollectionTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="166"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5mu-m8-8Oa" id="qMx-aw-86K">
@@ -213,7 +213,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchCollectionViewCell" id="eBi-v2-x9H" customClass="SearchCollectionViewCell" customModule="Athlete" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchCollectionViewCell" id="eBi-v2-x9H" customClass="SearchCollectionViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="87.666666666666657" height="44"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2A6-tI-NzD">
@@ -279,7 +279,7 @@
                                             <outlet property="ivheightCollection" destination="Ggj-xN-S3B" id="PBi-no-LmU"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CheckMarkTableTableViewCell" id="eR6-fT-1Wz" customClass="CheckMarkTableTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CheckMarkTableTableViewCell" id="eR6-fT-1Wz" customClass="CheckMarkTableTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="216" width="393" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eR6-fT-1Wz" id="d31-SU-0Qc">
@@ -330,7 +330,7 @@
                                             <outlet property="lblname" destination="00D-ds-BJS" id="CKf-sP-BLS"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="buttonTableViewCell" id="o40-st-ZdR" customClass="buttonTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="buttonTableViewCell" id="o40-st-ZdR" customClass="buttonTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="256" width="393" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o40-st-ZdR" id="jX8-wi-a9s">
@@ -434,13 +434,13 @@
         <!--Search Results View Controller-->
         <scene sceneID="cZj-Ob-VGC">
             <objects>
-                <viewController id="fru-JZ-AsR" customClass="SearchResultsViewController" customModule="Athlete" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fru-JZ-AsR" customClass="SearchResultsViewController" customModule="EliteAthleteEdge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0n-7n-d8a">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXd-ft-wH2">
-                                <rect key="frame" x="0.0" y="750" width="393" height="102"/>
+                                <rect key="frame" x="0.0" y="716" width="393" height="136"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lxZ-cE-7q0">
                                         <rect key="frame" x="0.0" y="8" width="393" height="60"/>
@@ -522,13 +522,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKB-mS-G9K">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="101"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="160"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipg-y4-m6i">
-                                        <rect key="frame" x="0.0" y="59" width="393" height="42"/>
+                                        <rect key="frame" x="0.0" y="118" width="393" height="42"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DB-76-cVB">
-                                                <rect key="frame" x="299" y="3.6666666666666643" width="70" height="35"/>
+                                                <rect key="frame" x="299" y="3.6666666666666714" width="70" height="35"/>
                                                 <color key="backgroundColor" name="blueColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="8DB-76-cVB" secondAttribute="height" multiplier="2:1" id="Mep-Fa-WMs"/>
@@ -553,7 +553,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="Icon search"/>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Course..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hBb-kL-6rF" customClass="UITexfield_Additions" customModule="Athlete" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Course..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hBb-kL-6rF" customClass="UITexfield_Additions" customModule="EliteAthleteEdge" customModuleProvider="target">
                                                 <rect key="frame" x="52.333333333333329" y="6" width="234.66666666666669" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -607,10 +607,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="J2s-gc-Jf1">
-                                <rect key="frame" x="0.0" y="109" width="393" height="633"/>
+                                <rect key="frame" x="0.0" y="168" width="393" height="540"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchResultsTableViewCell" id="Kbq-jE-ehe" customClass="SearchResultsTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchResultsTableViewCell" id="Kbq-jE-ehe" customClass="SearchResultsTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="179.66667175292969"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kbq-jE-ehe" id="uHl-bX-W2Z">
@@ -668,6 +668,7 @@
                                                             <color key="backgroundColor" name="blueColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="35" id="If6-1O-ocX"/>
+                                                                <constraint firstAttribute="width" secondItem="JMC-0n-uHY" secondAttribute="height" multiplier="2:1" id="pBw-qW-JgD"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Rubik-SemiBold" family="Rubik" pointSize="14"/>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -698,7 +699,6 @@
                                                         <constraint firstItem="iLh-N4-PbL" firstAttribute="top" secondItem="ht2-x5-iBs" secondAttribute="top" constant="8" id="c0O-3x-ae4"/>
                                                         <constraint firstItem="I59-eE-SGG" firstAttribute="leading" secondItem="ht2-x5-iBs" secondAttribute="leading" constant="12" id="gJg-Bg-BxN"/>
                                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="JMC-0n-uHY" secondAttribute="bottom" constant="8" id="jB2-B0-Xuu"/>
-                                                        <constraint firstItem="JMC-0n-uHY" firstAttribute="width" secondItem="JMC-0n-uHY" secondAttribute="height" multiplier="2:1" id="pBw-qW-JgD"/>
                                                         <constraint firstAttribute="trailing" secondItem="hDU-uC-9Ox" secondAttribute="trailing" constant="12" id="qLj-4P-ZAS"/>
                                                         <constraint firstItem="JMC-0n-uHY" firstAttribute="top" secondItem="hDU-uC-9Ox" secondAttribute="bottom" constant="8" id="y1C-v2-MQc"/>
                                                     </constraints>
@@ -775,16 +775,16 @@
         <!--Search Details View Controller-->
         <scene sceneID="cFR-rX-q8v">
             <objects>
-                <viewController storyboardIdentifier="SearchDetailsViewController" id="FfG-3q-rOq" customClass="SearchDetailsViewController" customModule="Athlete" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchDetailsViewController" id="FfG-3q-rOq" customClass="SearchDetailsViewController" customModule="EliteAthleteEdge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VkV-SO-g7R">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43Z-XH-OcU">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="1466"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="1432"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="buttonTableViewCell" id="QYZ-hx-vq2" customClass="buttonTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="buttonTableViewCell" id="QYZ-hx-vq2" customClass="buttonTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QYZ-hx-vq2" id="QGA-Ty-dAQ">
@@ -834,7 +834,7 @@
                                             <outlet property="btnseerestults" destination="ibd-dA-cbu" id="E94-Xb-UDZ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourcesTableViewCell" id="OhU-Xy-yOv" customClass="CourcesTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourcesTableViewCell" id="OhU-Xy-yOv" customClass="CourcesTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="111" width="393" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OhU-Xy-yOv" id="2QR-Fu-HeC">
@@ -915,7 +915,7 @@
                                             <outlet property="lbnmae" destination="UHT-Ch-Tuf" id="7Xk-Nh-f8o"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="topSerachDetailTableViewCell" id="fCo-iv-bmr" customClass="topSerachDetailTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="topSerachDetailTableViewCell" id="fCo-iv-bmr" customClass="topSerachDetailTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="208" width="393" height="454"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fCo-iv-bmr" id="5tG-6q-WgR">
@@ -1055,7 +1055,7 @@
                                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             </collectionViewFlowLayout>
                                                             <cells>
-                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategforyCollectionViewCell" id="qfU-DN-ACt" customClass="CategforyCollectionViewCell" customModule="Athlete" customModuleProvider="target">
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategforyCollectionViewCell" id="qfU-DN-ACt" customClass="CategforyCollectionViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="-41.666666666666664" width="128" height="128"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Alo-dh-5Bo">
@@ -1161,7 +1161,7 @@
                                             <outlet property="vedioImage" destination="0bV-0p-WYP" id="zcq-bs-iEe"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="topSerachDetail1TableViewCell" id="Sql-4A-MhX" customClass="topSerachDetail1TableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="topSerachDetail1TableViewCell" id="Sql-4A-MhX" customClass="topSerachDetail1TableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="662" width="393" height="264.66665649414062"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sql-4A-MhX" id="0nX-AY-bdc">
@@ -1293,16 +1293,16 @@
         <!--Question Answer View Controller-->
         <scene sceneID="LdL-qb-T2H">
             <objects>
-                <viewController storyboardIdentifier="QuestionAnswerViewController" id="Ua6-8B-jEL" customClass="QuestionAnswerViewController" customModule="Athlete" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestionAnswerViewController" id="Ua6-8B-jEL" customClass="QuestionAnswerViewController" customModule="EliteAthleteEdge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vbU-ZS-GNy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nyw-By-LpE">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="129"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="188"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhz-xH-vFS">
-                                        <rect key="frame" x="0.0" y="59" width="393" height="70"/>
+                                        <rect key="frame" x="0.0" y="118" width="393" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFy-fp-npQ">
                                                 <rect key="frame" x="24" y="8" width="30" height="30"/>
@@ -1357,10 +1357,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sRk-wK-f5D">
-                                <rect key="frame" x="0.0" y="137" width="393" height="616"/>
+                                <rect key="frame" x="0.0" y="196" width="393" height="523"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QNATopTableViewCell" id="gKh-oW-oEO" customClass="QNATopTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QNATopTableViewCell" id="gKh-oW-oEO" customClass="QNATopTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="253.33332824707031"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gKh-oW-oEO" id="qSV-fq-PwY">
@@ -1424,7 +1424,7 @@
                                             <outlet property="titleImage" destination="UVH-8b-o9p" id="kl0-rg-Wbq"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QNATableViewCell" id="qTf-RY-fka" customClass="QNATableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QNATableViewCell" id="qTf-RY-fka" customClass="QNATableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="303.33332824707031" width="393" height="290.66665649414062"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qTf-RY-fka" id="oUR-ta-SNO">
@@ -1644,7 +1644,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txg-GP-71h">
-                                <rect key="frame" x="20" y="753" width="353" height="45"/>
+                                <rect key="frame" x="20" y="719" width="353" height="45"/>
                                 <color key="backgroundColor" name="blueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="jMa-Vh-mV5"/>
@@ -1693,16 +1693,16 @@
         <!--Category Course View Controller-->
         <scene sceneID="7bT-ja-WKN">
             <objects>
-                <viewController storyboardIdentifier="CategoryCourseViewController" id="Bx3-cP-BTs" customClass="CategoryCourseViewController" customModule="Athlete" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoryCourseViewController" id="Bx3-cP-BTs" customClass="CategoryCourseViewController" customModule="EliteAthleteEdge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1LH-UP-ATZ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgm-D5-0pY">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="129"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="188"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbE-eh-kd4">
-                                        <rect key="frame" x="0.0" y="59" width="393" height="70"/>
+                                        <rect key="frame" x="0.0" y="118" width="393" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44Q-Mt-z4k">
                                                 <rect key="frame" x="16" y="8" width="30" height="30"/>
@@ -1749,10 +1749,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pUo-fn-be6">
-                                <rect key="frame" x="0.0" y="137" width="393" height="681"/>
+                                <rect key="frame" x="0.0" y="196" width="393" height="588"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchResultsTableViewCell" id="KR0-D6-KhF" customClass="SearchResultsTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchResultsTableViewCell" id="KR0-D6-KhF" customClass="SearchResultsTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="177.33332824707031"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KR0-D6-KhF" id="aZw-a7-1hL">
@@ -1888,16 +1888,16 @@
         <!--Search Details1 View Controller-->
         <scene sceneID="WhC-L2-DTe">
             <objects>
-                <viewController storyboardIdentifier="SearchDetails1ViewController" id="26F-FU-lzN" customClass="SearchDetails1ViewController" customModule="Athlete" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchDetails1ViewController" id="26F-FU-lzN" customClass="SearchDetails1ViewController" customModule="EliteAthleteEdge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vUT-lP-aCc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5g-dY-jpF">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="1466"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="1432"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="buttonTableViewCell" id="dNb-rc-Qmi" customClass="buttonTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="buttonTableViewCell" id="dNb-rc-Qmi" customClass="buttonTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dNb-rc-Qmi" id="gNH-Vp-vgL">
@@ -1947,7 +1947,7 @@
                                             <outlet property="btnseerestults" destination="FOM-64-0jS" id="gPt-We-fI9"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="topSerachDetailTableViewCell" id="iPg-DR-ZWc" customClass="topSerachDetailTableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="topSerachDetailTableViewCell" id="iPg-DR-ZWc" customClass="topSerachDetailTableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="111" width="393" height="454"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iPg-DR-ZWc" id="7S5-fa-gf7">
@@ -2087,7 +2087,7 @@
                                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             </collectionViewFlowLayout>
                                                             <cells>
-                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategforyCollectionViewCell" id="syP-aR-A79" customClass="CategforyCollectionViewCell" customModule="Athlete" customModuleProvider="target">
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategforyCollectionViewCell" id="syP-aR-A79" customClass="CategforyCollectionViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="-41.666666666666664" width="128" height="128"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6Hh-bZ-BrD">
@@ -2193,7 +2193,7 @@
                                             <outlet property="vedioImage" destination="OX1-tL-cnX" id="BuI-h6-mwb"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="topSerachDetail1TableViewCell" id="Fhp-0W-eHR" customClass="topSerachDetail1TableViewCell" customModule="Athlete" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="topSerachDetail1TableViewCell" id="Fhp-0W-eHR" customClass="topSerachDetail1TableViewCell" customModule="EliteAthleteEdge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="565" width="393" height="264.66665649414062"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fhp-0W-eHR" id="HcR-Wb-aUz">
@@ -2322,6 +2322,94 @@
             </objects>
             <point key="canvasLocation" x="2125.9541984732823" y="913.38028169014092"/>
         </scene>
+        <!--Alert Badge View Controller-->
+        <scene sceneID="2xe-84-RuQ">
+            <objects>
+                <viewController storyboardIdentifier="AlertBadgeViewController" id="9iN-Pj-eWh" customClass="AlertBadgeViewController" customModule="EliteAthleteEdge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KJ7-QG-MBL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Um-ad-619">
+                                <rect key="frame" x="16" y="321" width="361" height="210"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dsQ-AK-p0o">
+                                        <rect key="frame" x="16" y="162" width="329" height="32"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQ9-eM-Nvf">
+                                                <rect key="frame" x="0.0" y="0.0" width="329" height="32"/>
+                                                <color key="backgroundColor" name="purplecolor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Ok">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="yesBtn:" destination="9iN-Pj-eWh" eventType="touchUpInside" id="Yk2-Y7-ekm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badge Achive" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OO-Ze-3Z3">
+                                        <rect key="frame" x="16" y="15.999999999999998" width="329" height="19.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" name="blackColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations, you've earned a badge" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sz3-on-LVM">
+                                        <rect key="frame" x="16" y="127.33333333333333" width="329" height="18.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="textColor" name="greyColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="SOl-vR-yiU">
+                                        <rect key="frame" x="150.66666666666666" y="51.333333333333314" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="SOl-vR-yiU" secondAttribute="height" multiplier="1:1" id="hVU-hG-37W"/>
+                                            <constraint firstAttribute="height" constant="60" id="kMT-Ui-10F"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="purple30color"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="sz3-on-LVM" secondAttribute="trailing" constant="16" id="4dA-Z1-hZf"/>
+                                    <constraint firstItem="2OO-Ze-3Z3" firstAttribute="leading" secondItem="2Um-ad-619" secondAttribute="leading" constant="16" id="5gy-Ok-4v2"/>
+                                    <constraint firstAttribute="trailing" secondItem="dsQ-AK-p0o" secondAttribute="trailing" constant="16" id="CX2-fq-GFg"/>
+                                    <constraint firstItem="sz3-on-LVM" firstAttribute="leading" secondItem="2OO-Ze-3Z3" secondAttribute="leading" id="JCB-cv-XbI"/>
+                                    <constraint firstItem="dsQ-AK-p0o" firstAttribute="top" secondItem="sz3-on-LVM" secondAttribute="bottom" constant="16" id="Na1-Ke-mCN"/>
+                                    <constraint firstItem="2OO-Ze-3Z3" firstAttribute="top" secondItem="2Um-ad-619" secondAttribute="top" constant="16" id="Xbt-Ov-3mG"/>
+                                    <constraint firstAttribute="trailing" secondItem="2OO-Ze-3Z3" secondAttribute="trailing" constant="16" id="Xoh-th-nfl"/>
+                                    <constraint firstItem="sz3-on-LVM" firstAttribute="centerX" secondItem="SOl-vR-yiU" secondAttribute="centerX" id="ahh-ci-2Oy"/>
+                                    <constraint firstItem="sz3-on-LVM" firstAttribute="top" secondItem="SOl-vR-yiU" secondAttribute="bottom" constant="16" id="dCA-dp-mvc"/>
+                                    <constraint firstItem="SOl-vR-yiU" firstAttribute="top" secondItem="2OO-Ze-3Z3" secondAttribute="bottom" constant="16" id="daj-dT-mFI"/>
+                                    <constraint firstItem="dsQ-AK-p0o" firstAttribute="leading" secondItem="2Um-ad-619" secondAttribute="leading" constant="16" id="f1V-uZ-js4"/>
+                                    <constraint firstAttribute="bottom" secondItem="dsQ-AK-p0o" secondAttribute="bottom" constant="16" id="g60-jG-tbP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="G4I-Fw-aer"/>
+                        <color key="backgroundColor" name="bgColor"/>
+                        <constraints>
+                            <constraint firstItem="2Um-ad-619" firstAttribute="centerY" secondItem="KJ7-QG-MBL" secondAttribute="centerY" id="0a7-d7-Ktg"/>
+                            <constraint firstItem="2Um-ad-619" firstAttribute="leading" secondItem="G4I-Fw-aer" secondAttribute="leading" constant="16" id="bAm-I2-Dk9"/>
+                            <constraint firstItem="G4I-Fw-aer" firstAttribute="trailing" secondItem="2Um-ad-619" secondAttribute="trailing" constant="16" id="lg6-Ky-Oed"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="e9n-UU-o18"/>
+                    <connections>
+                        <outlet property="ivImage" destination="SOl-vR-yiU" id="YY8-ta-UEE"/>
+                        <outlet property="lblName" destination="sz3-on-LVM" id="lg0-H3-Ldy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hDp-GK-8pp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2800.7633587786258" y="1383.0985915492959"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Courses" width="48" height="41"/>
@@ -2338,6 +2426,7 @@
         <image name="Search Select" width="47" height="41"/>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="bookmark" catalog="system" width="110" height="128"/>
+        <image name="logo" width="291" height="200"/>
         <namedColor name="bgColor">
             <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -2358,6 +2447,12 @@
         </namedColor>
         <namedColor name="greyColor">
             <color red="0.38039215686274508" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="purple30color">
+            <color red="0.66666666666666663" green="0.57647058823529407" blue="0.95294117647058818" alpha="0.15000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="purplecolor">
+            <color red="0.66666666666666663" green="0.57647058823529407" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

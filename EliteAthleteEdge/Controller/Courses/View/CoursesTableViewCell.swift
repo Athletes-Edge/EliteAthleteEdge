@@ -15,8 +15,11 @@ class CoursesTableViewCell: UITableViewCell {
     @IBOutlet weak var titleImage: UIImageView!
     @IBOutlet weak var coachNameLabel: UILabel!
     @IBOutlet weak var markImage: UIButton!
+    @IBOutlet weak var prereqButton: UIButton!
+    @IBOutlet weak var prereqView: UIView!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var proImage: UIButton!
+    @IBOutlet weak var mainView: UIView!
     var delegate: HomeTableVeiwCellDelegate?
     
     override class func awakeFromNib() {
@@ -76,6 +79,24 @@ class CoursesTableViewCell: UITableViewCell {
         else{
             percentageLabel.text = "\(Int(coursePercentage))% complete"
             progessbar.setProgress(Float(coursePercentage / 100), animated: true)
+        }
+        
+        if let requiredCourseData = course.requiredCourseData,requiredCourseData.count > 0{
+            let isCompleted = requiredCourseData.filter { CourseModel1 in
+                return CourseModel1.isCompleted[FirebaseData.getCurrentUserId()] ?? false == false
+            }
+            self.prereqView.isHidden = false
+            if isCompleted.count > 0{
+                self.mainView.backgroundColor = .lightGray
+                
+            }
+            else{
+                self.mainView.backgroundColor = .white
+            }
+        }
+        else{
+            self.mainView.backgroundColor = .white
+            self.prereqView.isHidden = true
         }
     }
     @objc func didTapMarkImage(_ sender: UIButton) {

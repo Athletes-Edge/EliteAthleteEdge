@@ -30,18 +30,35 @@ class SavedViewController: UIViewController {
         FirebaseData.getUserData(uid: FirebaseData.getCurrentUserId()) { error, userData in
             self.userModel = userData
             FirebaseData.getSaveCourses(id: FirebaseData.getCurrentUserId()) { error, courses in
-                self.stopAnimating()
+                
                 if let courses = courses {
                     self.coursesModel = courses
-                    self.tableView.reloadData()
+                    self.fetchAllRequiredCourses()
                 } else {
+                    self.stopAnimating()
                     PopupHelper.alertWithOk(title: "Error", message: error?.localizedDescription ?? "", controler: self)
                 }
             }
         }
         
     }
-    
+    private func fetchAllRequiredCourses() {
+        let dispatch = DispatchGroup()
+        
+        for dd in self.coursesModel{
+            if let requiredCourse = dd.requiredCourse,requiredCourse.count > 0{
+                dispatch.enter()
+                FirebaseData.getCoursesByIds(courseIds: requiredCourse) { error, courses in
+                    dd.requiredCourseData = courses
+                    dispatch.leave()
+                }
+            }
+        }
+        dispatch.notify(queue: .main){
+            self.stopAnimating()
+            self.tableView.reloadData()
+        }
+    }
     @objc func didTapMarkButton(_ sender: UIButton) {
         let index = sender.tag
         let course = self.coursesModel[index]
@@ -65,6 +82,14 @@ class SavedViewController: UIViewController {
             }
         }
     }
+    @objc func didTapPreButton(_ sender: UIButton) {
+        if let requiredCourseData = self.coursesModel[sender.tag].requiredCourseData,requiredCourseData.count > 0{
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "PreCourseViewController") as! PreCourseViewController
+            vc.coursesModel = requiredCourseData
+            vc.userModel = self.userModel
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 extension SavedViewController:UITableViewDelegate,UITableViewDataSource{
@@ -82,6 +107,8 @@ extension SavedViewController:UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "SavedTableViewCell", for: indexPath) as! SavedTableViewCell
         cell.markButton.tag = indexPath.row
         cell.markButton.addTarget(self, action: #selector(didTapMarkButton(_:)), for: .touchUpInside)
+        cell.prereqButton.tag = indexPath.row
+        cell.prereqButton.addTarget(self, action: #selector(didTapPreButton(_:)), for: .touchUpInside)
         cell.configureCell(course: coursesModel[indexPath.row])
         return cell
     }
@@ -99,7 +126,25 @@ extension SavedViewController:UITableViewDelegate,UITableViewDataSource{
                 return
             }
         }
-        
+        if let requiredCourseData = data.requiredCourseData,requiredCourseData.count > 0{
+            let isCompleted = requiredCourseData.filter { CourseModel1 in
+                return CourseModel1.isCompleted[FirebaseData.getCurrentUserId()] ?? false == false
+            }
+            if isCompleted.count > 0{
+                let alert = UIAlertController(title: "Alert", message: "This course requires you to complete all prerquisite courses first. Please finish them to unlock this content", preferredStyle: .alert)
+                let open = UIAlertAction(title: "Open", style: .default){
+                    act in
+                    let btn = UIButton()
+                    btn.tag = indexPath.row
+                    self.didTapPreButton(btn)
+                }
+                let cancel = UIAlertAction(title: "Close", style: .default)
+                alert.addAction(open)
+                alert.addAction(cancel)
+                self.present(alert, animated: true)
+                return
+            }
+        }
         if let course =  data.courseOverviewData, course.count == 0{
             PopupHelper.showAlertControllerWithError(forErrorMessage: "There is no course or video", forViewController: self)
             return

@@ -18,7 +18,7 @@ struct dataprofile{
     
 }
 enum dataprofiles:String{
-    case HoursLearned = "Hours Learned",PointsAchieved = "Points Achieved", MyReviews = "My Reviews"
+    case HoursLearned = "Hours Learned",Points = "Points", Badge = "Badge"
 }
 import UIKit
 import YPImagePicker
@@ -30,16 +30,18 @@ class ProfileViewController: UIViewController {
     var picker: YPImagePicker?
     
     var array = [
-        dataprofile(name: .HoursLearned, color: UIColor().colorsFromAsset(name: .orangeColor),colorbg: UIColor().colorsFromAsset(name: .orangeColor30), icon: UIImage(named: "Icon hourglass half")!),
-        dataprofile(name: .PointsAchieved, color: UIColor().colorsFromAsset(name: .greenColor),colorbg:UIColor().colorsFromAsset(name: .greenColor30) , icon: UIImage(named: "Icon trophy")!)
-        //dataprofile(name: .MyReviews, color: UIColor().colorsFromAsset(name: .greenColor),colorbg:UIColor().colorsFromAsset(name: .greenColor30) , icon: UIImage(named: "_x32_6")!)
+        dataprofile(name: .HoursLearned, color: UIColor().colorsFromAsset(name: .orangeColor),colorbg: UIColor().colorsFromAsset(name: .orangeColor30), icon: UIImage(resource: .group195)),
+        dataprofile(name: .Points, color: UIColor().colorsFromAsset(name: .greenColor),colorbg:UIColor().colorsFromAsset(name: .greenColor30) , icon: UIImage(resource: .group197))
     ]
-    
+    var array1 = [
+        dataprofile(name: .Badge, color: UIColor().colorsFromAsset(name: .greenColor),colorbg:UIColor().colorsFromAsset(name: .greenColor30) , icon: UIImage(resource: .x326))
+    ]
     var userData = UserModel()
     var teamArray = [TeamModel]()
     var completedCourse = [CourseModel]()
     var progressArray = [CourseModel]()
-    var reviewArray = [ReviewModel]()
+    var allCourseArray = [CourseModel]()
+    var badgeArray = [BadgeModel]()
     var hoursLearned:Double! = 0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +87,7 @@ class ProfileViewController: UIViewController {
                         return
                     }
                     if let courses = courses{
+                        self.allCourseArray = courses
                         self.completedCourse = courses.filter({ CourseModel1 in
                             if let completed = CourseModel1.isCompleted{
                                 if completed[FirebaseData.getCurrentUserId()] ?? false{
@@ -120,17 +123,13 @@ class ProfileViewController: UIViewController {
                             }
                             self.hoursLearned = count
                         }
-                        
-                        FirebaseData.getAllCommentsCours(uid: FirebaseData.getCurrentUserId()) { error, courses in
+                        FirebaseData.getUserBadgeData(userId: FirebaseData.getCurrentUserId()) { error, courses in
                             self.stopAnimating()
-                            if let error = error{
-                                
-                                PopupHelper.showAlertControllerWithError(forErrorMessage: error.localizedDescription, forViewController: self)
-                                return
-                            }
-                            self.reviewArray = courses ?? []
+                            self.badgeArray = courses ?? []
                             self.tableView.reloadData()
                         }
+                        
+                        
                     }
                     
                 }
@@ -298,7 +297,7 @@ extension ProfileViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -307,15 +306,18 @@ extension ProfileViewController:UITableViewDelegate,UITableViewDataSource{
         if section == 1 {
             headerView.lblname.text = "TOTAL STATISTICS"
         } else if section == 2 {
+            headerView.lblname.text = "BADGES"
+        } else if section == 3 {
             headerView.lblname.text = "MY TEAM"
-        } else {
+        }
+        else {
             headerView.lblname.text = ""
         }
         return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return ((section == 1 || section == 2) ?  35.0 : 0.0)
+        return ((section == 1 || section == 2 || section == 3) ?  35.0 : 0.0)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -324,6 +326,9 @@ extension ProfileViewController:UITableViewDelegate,UITableViewDataSource{
             return self.array.count
         }
         else if section == 2{
+            return self.array1.count
+        }
+        else if section == 3{
             return self.teamArray.count
         }
         else{
@@ -341,14 +346,41 @@ extension ProfileViewController:UITableViewDelegate,UITableViewDataSource{
             switch self.array[indexPath.row].name{
             case .HoursLearned:
                 cell.btncolor.setTitle(Int64(self.hoursLearned).secondsToTime(), for: .normal)
-            case .PointsAchieved:
+            case .Points:
                 cell.btncolor.setTitle("\(self.userData.pointsSkill ?? 0)", for: .normal)
-            case .MyReviews:
-                cell.btncolor.setTitle("\(self.reviewArray.count)", for: .normal)
+            default:
+                break
             }
             cell.lblname.text = self.array[indexPath.row].name.rawValue
             return cell
-        } else if indexPath.section == 2 {
+        }
+        else if indexPath.section == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfilestatsTableViewCell", for: indexPath) as! ProfilestatsTableViewCell
+            cell.btncolor.backgroundColor = self.array1[indexPath.row].colorbg
+            cell.btncolor.setTitleColor(self.array1[indexPath.row].color, for: .normal)
+            cell.ivIcons.image = self.array1[indexPath.row].icon
+            switch self.array1[indexPath.row].name{
+            case .Badge:
+                cell.btncolor.setTitle("\(self.badgeArray.count)", for: .normal)
+                switch self.badgeArray.count{
+                case 1:
+                    cell.badge1.imageURL(self.badgeArray[0].icon ?? "")
+                    cell.badge1.isHidden = false
+                case 2:
+                    cell.badge1.imageURL(self.badgeArray[0].icon ?? "")
+                    cell.badge1.isHidden = false
+                    cell.badge2.imageURL(self.badgeArray[1].icon ?? "")
+                    cell.badge2.isHidden = false
+                default:
+                    break
+                }
+            default:
+                break
+            }
+            cell.lblname.text = self.array1[indexPath.row].name.rawValue
+            return cell
+        }
+        else if indexPath.section == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTeamTableViewCell", for: indexPath) as! ProfileTeamTableViewCell
             let data = self.teamArray[indexPath.row]
             cell.ivIcons.imageURL( data.image ?? "")
@@ -370,6 +402,7 @@ extension ProfileViewController:UITableViewDelegate,UITableViewDataSource{
             //cell.cityLabel.text = userData.address ?? ""
             cell.completeLabel.text = "\(self.completedCourse.count)"
             cell.progressLabel.text = "\(self.progressArray.count)"
+            cell.myCourseLabel.text = "\(self.allCourseArray.count)"
             
             if self.userData.isSubsCribed{
                 cell.upgradeBtn.text = "Active"
@@ -392,17 +425,17 @@ extension ProfileViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if indexPath.section == 1{
-//            switch self.array[indexPath.row].name{
-//            case .MyReviews:
-//                let vc = UIStoryboard.storyBoard(withName: .Profile).loadViewController(withIdentifier: .MyReviewViewController) as! MyReviewViewController
-//                vc.reviewArray = self.reviewArray
-//                self.navigationController?.pushViewController(vc, animated: true)
-//            default:
-//                break
-//            }
-//        }
-//        else
+        if indexPath.section == 2{
+            switch self.array1[indexPath.row].name{
+            case .Badge:
+                let vc = UIStoryboard.storyBoard(withName: .Profile).loadViewController(withIdentifier: .BadgeViewController) as! BadgeViewController
+                vc.badgeArray = self.badgeArray
+                self.navigationController?.pushViewController(vc, animated: true)
+            default:
+                break
+            }
+        }
+        else
         if indexPath.section == 2{
             let vc = UIStoryboard.storyBoard(withName: .Profile).loadViewController(withIdentifier: .AlertDeleteViewController) as! AlertDeleteViewController
             vc.modalTransitionStyle = .crossDissolve

@@ -81,7 +81,9 @@ enum viewControllers: String {
          SubscriptionViewController = "SubscriptionViewController",
          CategoryCourseViewController = "CategoryCourseViewController",
          MyReviewViewController = "MyReviewViewController",
-         AlertDeleteViewController = "AlertDeleteViewController"
+         AlertDeleteViewController = "AlertDeleteViewController",
+         AlertBadgeViewController = "AlertBadgeViewController",
+         BadgeViewController = "BadgeViewController"
     
     
     

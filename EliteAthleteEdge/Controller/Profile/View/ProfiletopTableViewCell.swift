@@ -13,6 +13,7 @@ class ProfiletopTableViewCell: UITableViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var btnedit: UIButton!
+    @IBOutlet weak var myCourseLabel: UILabel!
     @IBOutlet weak var completeLabel: UILabel!
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var upgradeLabel: UILabel!

@@ -651,7 +651,7 @@ class FirebaseData{
                             
                             FirebaseData.getCourseOveriewData(courseID: course.id ?? "") { error, userData in
                                 if let userData = userData {
-                                    //course.courseOverviewData = userData
+                                    course.courseOverviewData = userData
                                     courseList.append(course)
                                 }
                                 dispatchGroup.leave()
@@ -762,8 +762,40 @@ class FirebaseData{
             }
         }
     }
-
-    
+    class func getCourseBadgeData(courseID: String, completion:@escaping (_ error:Error?, _ courses: [BadgeModel]?) -> ()) {
+        let db = Firestore.firestore()
+        db.collection(Constant.NODE_BADGES).whereField(BadgeModelKey.courses.rawValue, arrayContains: courseID).getDocuments() { (querySnapShot, error) in
+            if let err = error {
+                completion(err,nil)
+            }else {
+                var referralList:[BadgeModel] = []
+                if querySnapShot?.documents.count ?? 0 > 0 {
+                    querySnapShot?.documents.forEach({ (queryDocument) in
+                        let course = BadgeModel(snap: queryDocument)!
+                        referralList.append(course)
+                    })
+                }
+                completion(nil, referralList)
+            }
+        }
+    }
+    class func getUserBadgeData(userId: String, completion:@escaping (_ error:Error?, _ courses: [BadgeModel]?) -> ()) {
+        let db = Firestore.firestore()
+        db.collection(Constant.NODE_BADGES).whereField(BadgeModelKey.completeUsers.rawValue, arrayContains: userId).getDocuments() { (querySnapShot, error) in
+            if let err = error {
+                completion(err,nil)
+            }else {
+                var referralList:[BadgeModel] = []
+                if querySnapShot?.documents.count ?? 0 > 0 {
+                    querySnapShot?.documents.forEach({ (queryDocument) in
+                        let course = BadgeModel(snap: queryDocument)!
+                        referralList.append(course)
+                    })
+                }
+                completion(nil, referralList)
+            }
+        }
+    }
     class func UpdateCourseOveriewData(chapterID:String, dic:CourseOverviewModel, completion:@escaping (_ error:Error?) -> ()) {
         let db = Firestore.firestore()
         
@@ -1095,19 +1127,7 @@ class FirebaseData{
         }
     }
     
-    class func saveBannerList(userData: BannerModel, completion:@escaping (_ error:Error?) -> ()) {
-        
-        let db = Firestore.firestore()
-        db.collection(Constant.NODE_BANNERS).document().setData(userData.dictionary, completion: {
-            err in
-            if let err = err {
-                completion(err)
-            } else {
-                completion(nil)
-            }
-        })
-        
-    }
+    
 
 
     
@@ -1259,6 +1279,29 @@ class FirebaseData{
             completion(NSError(domain: "No Data", code: 113, userInfo: [NSLocalizedDescriptionKey : NSLocalizedString("No Data", comment: "")]))
         }
         db.collection(Constant.NODE_USERS).document(referId).updateData(dics, completion: {
+            err in
+            if let err = err {
+                //let erro = FIRErrorCode(raw)
+                completion(err)
+            } else {
+                completion(nil)
+            }
+        })
+        
+    }
+    class func updateBadgeData(_ referId: String, dic:Any, completion:@escaping (_ error:Error?) -> ()) {
+        let db = Firestore.firestore()
+        var dics: [String:Any]!
+        if let dta = dic as? BadgeModel{
+            dics = dta.dictionary
+        }
+        else if let dta = dic as? [String:Any]{
+            dics = dta
+        }
+        else{
+            completion(NSError(domain: "No Data", code: 113, userInfo: [NSLocalizedDescriptionKey : NSLocalizedString("No Data", comment: "")]))
+        }
+        db.collection(Constant.NODE_BADGES).document(referId).updateData(dics, completion: {
             err in
             if let err = err {
                 //let erro = FIRErrorCode(raw)
@@ -1917,28 +1960,7 @@ class FirebaseData{
         
     }
     
-    
-    
-    
-    class func getBannersList(completion:@escaping (_ error:Error?, _ userData: [BannerModel]?) -> ()) {
-        
-        let db = Firestore.firestore()
-        db.collection(Constant.NODE_BANNERS).addSnapshotListener { (querySnapShot, error) in
-            if let err = error {
-                completion(err,nil)
-            }else {
-                var referralList:[BannerModel] = []
-                if querySnapShot?.documents.count ?? 0 > 0 {
-                    querySnapShot?.documents.forEach({ (queryDocument) in
-                        referralList.append(BannerModel(snap: queryDocument )!)
-                        
-                    })
-                }
-                completion(nil,referralList)
-            }
-        }
-        
-    }
+
 
 
     class func getInstrumentsList(completion:@escaping (_ error:Error?, _ userData: [InstrumetnsListModel]?) -> ()) {

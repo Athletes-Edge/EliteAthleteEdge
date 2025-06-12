@@ -52,7 +52,6 @@ enum UserKeys:String {
     case pm_id = "pm_id"
     case team = "team"
     case isVerified = "isVerified"
-
     
 }
 class UserModel: GenericDictionary {
@@ -190,6 +189,7 @@ class UserModel: GenericDictionary {
         get{ return stringForKey(key: UserKeys.pm_id.rawValue)}
         set{setValue(newValue, forKey: UserKeys.pm_id.rawValue)}
     }
+    
 }
 enum BookingKeys:String {
     

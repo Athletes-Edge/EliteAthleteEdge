@@ -14,7 +14,10 @@ class SavedTableViewCell: UITableViewCell {
     @IBOutlet weak var courseTitleLabel: UILabel!
     @IBOutlet weak var coachNameLabel: UILabel!
     @IBOutlet weak var markButton: UIButton!
+    @IBOutlet weak var prereqButton: UIButton!
+    @IBOutlet weak var prereqView: UIView!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var mainView: UIView!
     override class func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -34,5 +37,23 @@ class SavedTableViewCell: UITableViewCell {
         }
         //guard let coachData = course.coachesData else { return }
         coachNameLabel.text =  course.dscription ?? ""
+        
+        if let requiredCourseData = course.requiredCourseData,requiredCourseData.count > 0{
+            let isCompleted = requiredCourseData.filter { CourseModel1 in
+                return CourseModel1.isCompleted[FirebaseData.getCurrentUserId()] ?? false == false
+            }
+            self.prereqView.isHidden = false
+            if isCompleted.count > 0{
+                self.mainView.backgroundColor = .lightGray
+                
+            }
+            else{
+                self.mainView.backgroundColor = .white
+            }
+        }
+        else{
+            self.mainView.backgroundColor = .white
+            self.prereqView.isHidden = true
+        }
     }
 }

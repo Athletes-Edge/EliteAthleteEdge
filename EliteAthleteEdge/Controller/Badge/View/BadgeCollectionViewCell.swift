@@ -8,5 +8,6 @@
 import UIKit
 
 class BadgeCollectionViewCell: UICollectionViewCell {
-    
+    @IBOutlet weak var ivImage: UIImageView!
+    @IBOutlet weak var lblName: UILabel!
 }

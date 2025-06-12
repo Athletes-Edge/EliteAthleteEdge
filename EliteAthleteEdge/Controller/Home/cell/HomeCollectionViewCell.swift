@@ -15,7 +15,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var markButton: UIButton!
-    
+    @IBOutlet weak var mainView: UIView!
     override class func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -47,7 +47,21 @@ class HomeCollectionViewCell: UICollectionViewCell {
                 totalPercentage += progress
             }
         }
-        
+        if let requiredCourseData = course.requiredCourseData,requiredCourseData.count > 0{
+            let isCompleted = requiredCourseData.filter { CourseModel1 in
+                return CourseModel1.isCompleted[FirebaseData.getCurrentUserId()] ?? false == false
+            }
+            if isCompleted.count > 0{
+                self.mainView.backgroundColor = .white
+                
+            }
+            else{
+                self.mainView.backgroundColor = .white
+            }
+        }
+        else{
+            self.mainView.backgroundColor = .white
+        }
     }
     
     

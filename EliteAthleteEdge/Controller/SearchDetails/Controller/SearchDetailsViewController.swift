@@ -49,6 +49,9 @@ class SearchDetailsViewController: UIViewController, AVPlayerViewControllerDeleg
     private func fetchAllQuestions() {
         guard let couseData = self.courseData else { return }
         if couseData.courseOverviewData.count > 0 {
+            couseData.courseOverviewData.sort { CourseOverviewModel1, CourseOverviewModel2 in
+                return CourseOverviewModel1.isRequired.description > CourseOverviewModel2.isRequired.description
+            }
             PopupHelper.showAnimating(self)
             
             FirebaseData.getChapterQuestionData(chapterId: couseData.courseOverviewData[self.selectedIndex].docId ) { error, courses in
@@ -170,10 +173,16 @@ class SearchDetailsViewController: UIViewController, AVPlayerViewControllerDeleg
         data.day = "\(date.day)"
         data.month = "\(date.getMonth)"
         data.year = "\(date.year)"
-        
+        if let progress =  overviewData.progress,let val = progress[FirebaseData.getCurrentUserId()], val >= 90{
+            overviewData.requiredProgress[FirebaseData.getCurrentUserId()] = "Complete"
+        }
+        else{
+            overviewData.requiredProgress[FirebaseData.getCurrentUserId()] = "inComplete"
+        }
         FirebaseData.saveCourseStatisticData(uid: UUID().uuidString, userData: data) { error in
             FirebaseData.UpdateCourseOveriewData(chapterID: overviewData.id , dic: overviewData) { error in
                 self.courseData.courseOverviewData[self.selectedIndex] = overviewData
+                self.ivitableview.reloadData()
                 self.stopAnimating()
                 self.updatecourse()
             }
@@ -185,8 +194,8 @@ class SearchDetailsViewController: UIViewController, AVPlayerViewControllerDeleg
         let chapter = courseData.courseOverviewData[selectedIndex]
         if let progress = chapter.progress{
             if let time = progress[FirebaseData.getCurrentUserId()]{
-                if time < 100{
-                    return
+                if time >= 90{
+                    //return
                 }
                 else{
                     var countr:Int64 = 0
@@ -199,6 +208,7 @@ class SearchDetailsViewController: UIViewController, AVPlayerViewControllerDeleg
             }
         }
         
+        
         var data = [String:Bool]()
         if let complete = courseData.isCompleted{
             data = complete
@@ -210,14 +220,60 @@ class SearchDetailsViewController: UIViewController, AVPlayerViewControllerDeleg
         FirebaseData.UpdateCourseData(courseID: courseData.docId, dic: cor) { error in
             
             FirebaseData.updateUserData(FirebaseData.getCurrentUserId(), dic: user) { error in
-                
+                if let course = self.courseData.courseOverviewData{
+                    let isRequired = course.filter { CourseOverviewModel1 in
+                        return CourseOverviewModel1.isRequired
+                    }
+                    if isRequired.count > 0{
+                        let requiredProgress = isRequired.filter { CourseOverviewModel1 in
+                            if let requiredProgress = CourseOverviewModel1.requiredProgress,let val = requiredProgress[FirebaseData.getCurrentUserId()],val == "Complete"{
+                                return true
+                            }
+                            else{
+                                return false
+                            }
+                        }
+                        if requiredProgress.count > 0,isRequired.count == requiredProgress.count{
+                            self.checkBadge()
+                        }
+                    }
+                    else{
+                        let requiredProgress = course.filter { CourseOverviewModel1 in
+                            if let requiredProgress = CourseOverviewModel1.requiredProgress,let val = requiredProgress[FirebaseData.getCurrentUserId()],val == "Complete"{
+                                return true
+                            }
+                            else{
+                                return false
+                            }
+                        }
+                        if requiredProgress.count > 0,course.count == requiredProgress.count{
+                            self.checkBadge()
+                        }
+                    }
+                    
+                }
             }
         }
+        
     }
     
     
     
-    
+    func checkBadge(){
+        FirebaseData.getCourseBadgeData(courseID: self.courseData.id) { error, courses in
+            for course in courses ?? []{
+                if let completeUsers = course.completeUsers,
+                    !completeUsers.contains(FirebaseData.getCurrentUserId()){
+                    let vc = UIStoryboard.storyBoard(withName: .Search).loadViewController(withIdentifier: .AlertBadgeViewController) as! AlertBadgeViewController
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overCurrentContext
+                    vc.course = self.courseData
+                    self.present(vc, animated: true)
+                    break
+                }
+            }
+        }
+    }
     
     
     
@@ -367,10 +423,57 @@ extension SearchDetailsViewController:UITableViewDelegate,UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 2 {
-            self.selectedIndex = indexPath.row
-            self.ivitableview.reloadData()
-            self.ivitableview.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-            self.fetchAllQuestions()
+            let data = self.courseData.courseOverviewData.filter({$0.isRequired})
+            if data.count > 0{
+                if let req = data.first(where: { CourseOverviewModel in
+                    if let requiredProgress = CourseOverviewModel.requiredProgress{
+                        if requiredProgress[FirebaseData.getCurrentUserId()] == "Complete"
+                        {
+                            return false
+                        }
+                        else{
+                            return true
+                        }
+                    }
+                    else{
+                        return true
+                    }
+                }){
+                    let dataa = self.courseData.courseOverviewData[indexPath.row]
+                    if let requiredProgress = dataa.requiredProgress,let str = requiredProgress[FirebaseData.getCurrentUserId()]{
+                        self.selectedIndex = indexPath.row
+                        self.ivitableview.reloadData()
+                        self.ivitableview.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+                        self.fetchAllQuestions()
+                    }
+                    else{
+                        if dataa.isRequired{
+                            self.selectedIndex = indexPath.row
+                            self.ivitableview.reloadData()
+                            self.ivitableview.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+                            self.fetchAllQuestions()
+                        }
+                        else{
+                            PopupHelper.showAlertControllerWithError(forErrorMessage: "Please complete the required chapter to proceed", forViewController: self)
+                        }
+                        
+                    }
+                    
+                }
+                else{
+                    self.selectedIndex = indexPath.row
+                    self.ivitableview.reloadData()
+                    self.ivitableview.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+                    self.fetchAllQuestions()
+                }
+            }
+            else{
+                self.selectedIndex = indexPath.row
+                self.ivitableview.reloadData()
+                self.ivitableview.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+                self.fetchAllQuestions()
+            }
+            
         }
     }
 }

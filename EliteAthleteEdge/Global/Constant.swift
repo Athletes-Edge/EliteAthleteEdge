@@ -327,7 +327,7 @@ struct Constant {
     static let NODE_CHAPTERS = "Chapters"
     
     static let NODE_REPORT = "Reports"
-    static let NODE_BANNERS = "Banners"
+    static let NODE_BADGES = "badges"
     static let NODE_RECORDS = "Records"
     static let NODE_MEMOS = "Memos"
 

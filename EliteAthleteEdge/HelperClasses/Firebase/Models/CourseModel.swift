@@ -21,6 +21,9 @@ enum CourseModelKey: String {
     case isSaved = "isSaved"
     case isCompleted = "isCompleted"
     case contentType = "contentType"
+    case badgeAvailable = "badgeAvailable"
+    case courseCompletionUser = "courseCompletionUser"
+    case requiredCourse = "requiredCourse"
 }
 
 class CourseModel: GenericDictionary {
@@ -54,6 +57,10 @@ class CourseModel: GenericDictionary {
         get {return stringArrayForKey(key: CourseModelKey.categoryId.rawValue)}
         set {setValue(newValue, forKey: CourseModelKey.categoryId.rawValue)}
     }
+    var requiredCourse: [String]! {
+        get {return stringArrayForKey(key: CourseModelKey.requiredCourse.rawValue)}
+        set {setValue(newValue, forKey: CourseModelKey.requiredCourse.rawValue)}
+    }
     var createdDate: Int64! {
         get {return int64ForKey(key: CourseModelKey.createdDate.rawValue)}
         set {setValue(newValue, forKey: CourseModelKey.createdDate.rawValue)}
@@ -72,7 +79,10 @@ class CourseModel: GenericDictionary {
         get { return boolForKey(key: CourseModelKey.isPro.rawValue)}
         set { setValue(newValue, forKey: CourseModelKey.isPro.rawValue)}
     }
-    
+    var badgeAvailable: Bool! {
+        get { return boolForKey(key: CourseModelKey.badgeAvailable.rawValue)}
+        set { setValue(newValue, forKey: CourseModelKey.badgeAvailable.rawValue)}
+    }
     var rating: Double! {
         get { return doubleForKey(key: CourseModelKey.rating.rawValue)}
         set { setValue(newValue, forKey: CourseModelKey.rating.rawValue)}
@@ -90,6 +100,10 @@ class CourseModel: GenericDictionary {
         get { return boolDictForKey(key: CourseModelKey.isCompleted.rawValue)}
         set { setValue(newValue, forKey: CourseModelKey.isCompleted.rawValue)}
     }
+    var courseCompletionUser: [String:String]! {
+        get { return stringDictForKey(key: CourseModelKey.courseCompletionUser.rawValue)}
+        set { setValue(newValue, forKey: CourseModelKey.courseCompletionUser.rawValue)}
+    }
     var contentType: String! {
         get { return stringForKey(key: CourseModelKey.contentType.rawValue)}
         set { setValue(newValue, forKey: CourseModelKey.contentType.rawValue)}
@@ -97,6 +111,7 @@ class CourseModel: GenericDictionary {
     //var coachesData: CoachesModel!
     var courseOverviewData:[CourseOverviewModel]! = []
     var courseQuizData:[QuestionsModel]! = []
+    var requiredCourseData:[CourseModel]! = []
 }
 
 
@@ -227,6 +242,8 @@ enum CourseOverviewModelKey: String {
     case videoUrl = "videoUrl"
     case progress = "progress"
     case watchHour = "watchHour"
+    case isRequired = "isRequired"
+    case requiredProgress = "requiredProgress"
 }
 
 class CourseOverviewModel: GenericDictionary {
@@ -265,6 +282,11 @@ class CourseOverviewModel: GenericDictionary {
         get{ return stringForKey(key: CourseOverviewModelKey.videoUrl.rawValue)}
         set{setValue(newValue, forKey: CourseOverviewModelKey.videoUrl.rawValue)}
     }
+    var isRequired:Bool!
+    {
+        get{ return boolForKey(key: CourseOverviewModelKey.isRequired.rawValue)}
+        set{setValue(newValue, forKey: CourseOverviewModelKey.isRequired.rawValue)}
+    }
     var progress:[String:Double]!
     {
         get{ return doubleDictForKey(key: CourseOverviewModelKey.progress.rawValue)}
@@ -274,6 +296,11 @@ class CourseOverviewModel: GenericDictionary {
     {
         get{ return doubleDictForKey(key: CourseOverviewModelKey.watchHour.rawValue)}
         set{setValue(newValue, forKey: CourseOverviewModelKey.watchHour.rawValue)}
+    }
+    var requiredProgress:[String:String]!
+    {
+        get{ return stringDictForKey(key: CourseOverviewModelKey.requiredProgress.rawValue)}
+        set{setValue(newValue, forKey: CourseOverviewModelKey.requiredProgress.rawValue)}
     }
 }
 
@@ -388,4 +415,40 @@ class InvitationModel: GenericDictionary {
         get{ return stringForKey(key: InvitationKey.type.rawValue)}
         set{setValue(newValue, forKey: InvitationKey.type.rawValue)}
     }
+}
+enum BadgeModelKey: String {
+    case id = "id"
+    case completeUsers = "completeUsers"
+    case courses = "courses"
+    case icon = "icon"
+    case title = "title"
+}
+
+class BadgeModel: GenericDictionary {
+    var id:String!
+    {
+        get{ return stringForKey(key: BadgeModelKey.id.rawValue)}
+        set{setValue(newValue, forKey: BadgeModelKey.id.rawValue)}
+    }
+    var icon:String!
+    {
+        get{ return stringForKey(key: BadgeModelKey.icon.rawValue)}
+        set{setValue(newValue, forKey: BadgeModelKey.icon.rawValue)}
+    }
+    var title:String!
+    {
+        get{ return stringForKey(key: BadgeModelKey.title.rawValue)}
+        set{setValue(newValue, forKey: BadgeModelKey.title.rawValue)}
+    }
+    var courses:[String]!
+    {
+        get{ return stringArrayForKey(key: BadgeModelKey.courses.rawValue)}
+        set{setValue(newValue, forKey: BadgeModelKey.courses.rawValue)}
+    }
+    var completeUsers:[String]!
+    {
+        get{ return stringArrayForKey(key: BadgeModelKey.completeUsers.rawValue)}
+        set{setValue(newValue, forKey: BadgeModelKey.completeUsers.rawValue)}
+    }
+    
 }
