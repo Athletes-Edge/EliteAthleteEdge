@@ -393,34 +393,57 @@ extension ProfileViewController:UITableViewDelegate,UITableViewDataSource{
 //            return cell
 //        }
         else  {
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfiletopTableViewCell", for: indexPath) as! ProfiletopTableViewCell
             cell.btnedit.addTarget(self, action: #selector(self.btnedit), for: .touchUpInside)
             cell.profileImage.isUserInteractionEnabled = true
             cell.profileImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapProfileImage)))
             cell.profileImage.imageURL(self.userData.userImage ?? "")
             cell.userNameLabel.text = userData.userName ?? ""
-            //cell.cityLabel.text = userData.address ?? ""
             cell.completeLabel.text = "\(self.completedCourse.count)"
             cell.progressLabel.text = "\(self.progressArray.count)"
             cell.myCourseLabel.text = "\(self.allCourseArray.count)"
             
-            if self.userData.isSubsCribed{
-                cell.upgradeBtn.text = "Active"
-                cell.cancelLabel.isHidden = false
-                cell.upgradeLabel.text = "Upgraded"
-//                if let gests = cell.upgradeView.gestureRecognizers{
-//                    for gest in gests{
-//                        cell.upgradeView.removeGestureRecognizer(gest)
-//                    }
-//                }
+            // Hide the upgrade functionality
+            cell.upgradeView.isHidden = true
+             
+            // Find and modify height constraints
+            for constraint in cell.upgradeView.constraints {
+                if constraint.firstAttribute == .height {
+                    constraint.constant = 0
+                }
             }
-            else{
-                cell.upgradeLabel.text = "Upgrade Now"
-                cell.cancelLabel.isHidden = true
-                cell.upgradeBtn.text = "Inactive"
-            }
-            cell.upgradeView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didtapUpgrade)))
+            cell.upgradeView.isHidden = true
+            
+             
+            // Remove the gesture recognizer if it was previously added
+            cell.upgradeView.gestureRecognizers?.removeAll()
+            
             return cell
+            /** ORIGINAL FOR WHEN WE ALLOW UPGRADES **/
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfiletopTableViewCell", for: indexPath) as! ProfiletopTableViewCell
+//            cell.btnedit.addTarget(self, action: #selector(self.btnedit), for: .touchUpInside)
+//            cell.profileImage.isUserInteractionEnabled = true
+//            cell.profileImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapProfileImage)))
+//            cell.profileImage.imageURL(self.userData.userImage ?? "")
+//            cell.userNameLabel.text = userData.userName ?? ""
+//            //cell.cityLabel.text = userData.address ?? ""
+//            cell.completeLabel.text = "\(self.completedCourse.count)"
+//            cell.progressLabel.text = "\(self.progressArray.count)"
+//            cell.myCourseLabel.text = "\(self.allCourseArray.count)"
+//             
+//            if self.userData.isSubsCribed{
+//                cell.upgradeBtn.text = "Active"
+//                cell.cancelLabel.isHidden = false
+//                cell.upgradeLabel.text = "Upgraded"
+//            }
+//            else{
+//                cell.upgradeLabel.text = "Upgrade Now"
+//                cell.cancelLabel.isHidden = true
+//                cell.upgradeBtn.text = "Inactive"
+//            }
+//            cell.upgradeView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didtapUpgrade)))
+//            return cell
         }
     }
     
