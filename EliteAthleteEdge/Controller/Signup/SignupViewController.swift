@@ -184,9 +184,11 @@ class SignupViewController: UIViewController {
         
         FirebaseData.updateTeamData(data.docId, dic: team) { error in
             self.stopAnimating()
-            PopupHelper.showAlertControllerWithSuccessLogout(forErrorMessage: "Please confirm your email '\(self.emailTextField.text!)' to active your account", forViewController: self)
-            //let vc = UIStoryboard.storyBoard(withName: .Home).loadViewController(withIdentifier: .LGSideMenuController)
-            //UIApplication.shared.setRootViewController(vc)
+            
+            // Navigate to email confirmation screen instead of showing alert
+            let vc = UIStoryboard.storyBoard(withName: .main).loadViewController(withIdentifier: .EmailConfirmationViewController) as! EmailConfirmationViewController
+            vc.userEmail = self.emailTextField.text ?? ""
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     @objc func didChange(datePicker: UIDatePicker) {
