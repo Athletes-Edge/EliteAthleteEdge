@@ -240,6 +240,7 @@ enum CourseOverviewModelKey: String {
     case thumbnailUrl = "thumbnailUrl"
     case title = "title"
     case videoUrl = "videoUrl"
+    case playbackUrl = "playbackUrl"
     case progress = "progress"
     case watchHour = "watchHour"
     case isRequired = "isRequired"
@@ -281,6 +282,11 @@ class CourseOverviewModel: GenericDictionary {
     {
         get{ return stringForKey(key: CourseOverviewModelKey.videoUrl.rawValue)}
         set{setValue(newValue, forKey: CourseOverviewModelKey.videoUrl.rawValue)}
+    }
+    var playbackUrl:String!
+    {
+        get{ return stringForKey(key: CourseOverviewModelKey.playbackUrl.rawValue)}
+        set{setValue(newValue, forKey: CourseOverviewModelKey.playbackUrl.rawValue)}
     }
     var isRequired:Bool!
     {

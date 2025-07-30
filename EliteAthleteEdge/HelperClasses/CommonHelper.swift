@@ -261,5 +261,24 @@ class CommonHelper
 //        userDefaults.synchronize()
 //      }
     
+    // MARK: - Video URL Transformation
+    /// Transforms video URLs with priority for playbackUrl if it exists, otherwise handles S3 URL transformation
+    /// - Parameter courseOverview: The course overview model containing video data
+    /// - Returns: The appropriate video URL (playbackUrl if available, otherwise transformed videoUrl)
+    class func transformVideoUrl(_ courseOverview: CourseOverviewModel?) -> String? {
+        guard let courseOverview = courseOverview else { return nil }
+        
+        // If playbackUrl exists and is not empty, use it directly
+        if let playbackUrl = courseOverview.playbackUrl, !playbackUrl.isEmpty {
+            return playbackUrl
+        }
+        
+        // Otherwise, handle the videoUrl transformation
+        guard let videoUrl = courseOverview.videoUrl, !videoUrl.isEmpty else { return nil }
+          
+        // If it's not an S3 URL or transformation fails, return the original videoUrl
+        return videoUrl
+    }
+    
 }
 

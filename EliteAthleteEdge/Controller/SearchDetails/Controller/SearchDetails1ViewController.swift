@@ -88,7 +88,13 @@ class SearchDetails1ViewController: UIViewController, AVPlayerViewControllerDele
     @objc func didTapPlay(_ sender: UIButton) {
         
         let courseOverview = self.courseData.courseOverviewData[self.selectedIndex]
-        guard let videoURL = URL(string: courseOverview.videoUrl ?? "") else { return }
+        let originalUrl = courseOverview.videoUrl
+        let transformedVideoUrl = CommonHelper.transformVideoUrl(courseOverview)
+        
+        print("🎥 Video Playback - Original URL: \(originalUrl ?? "nil")")
+        print("🎥 Video Playback - Transformed URL: \(transformedVideoUrl ?? "nil")")
+        
+        guard let videoURL = URL(string: transformedVideoUrl ?? "") else { return }
         
         self.player = AVPlayer(url: videoURL)
         let playerViewController = AVPlayerViewController()
@@ -103,7 +109,13 @@ class SearchDetails1ViewController: UIViewController, AVPlayerViewControllerDele
     @objc func didTapPlay1(_ sender: UIButton) {
         self.selectedIndex = sender.tag
         let courseOverview = self.courseData.courseOverviewData[self.selectedIndex]
-        guard let videoURL = URL(string: courseOverview.videoUrl ?? "") else { return }
+        let originalUrl = courseOverview.videoUrl
+        let transformedVideoUrl = CommonHelper.transformVideoUrl(courseOverview)
+        
+        print("🎥 Video Playback - Original URL: \(originalUrl ?? "nil")")
+        print("🎥 Video Playback - Transformed URL: \(transformedVideoUrl ?? "nil")")
+        
+        guard let videoURL = URL(string: transformedVideoUrl ?? "") else { return }
         
         self.player = AVPlayer(url: videoURL)
         let playerViewController = AVPlayerViewController()
